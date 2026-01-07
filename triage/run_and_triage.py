@@ -28,7 +28,7 @@ def run_once() -> int:
     # Try LLM first, fall back to rules.
     try:
         triage = analyze_with_openai(result.raw_output)
-        triage["engine"] = "genai"
+        triage["engine"] = "GeminiAI"
     except Exception as e:
         triage = analyze_with_rules(result.raw_output)
         triage["engine"] = "rules"
